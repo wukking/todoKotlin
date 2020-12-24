@@ -1,0 +1,14 @@
+{
+	"client":{
+		"appType":"1",
+		"cp_id":"2850086000447419737",
+		"product_id":"736430079244755520",
+		"client_id":"524336988262773120",
+		"client_secret":"E0F0D0D81EB3DC2C73733E91999FA384C95197D6764B29334623B639B9270260",
+		"project_id":"736430079244755520",
+		"app_id":"103553937",
+		"api_key":"CgB6e3x9APWtgueUSdE5HlhUtfVsQvFSuIhtq6nXCeQBMSGfGf4mZ+GtU3eO4SAs3T62X8Ucz9GQLyShO5QuR8td",
+		"package_name":"com.wuyson.todokotlin"
+	},
+	"configuration_version":"1.0"
+}

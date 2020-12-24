@@ -8,6 +8,30 @@
     tools:context=".ui.activity.MainActivity">
 
     <TextView
+        android:id="@+id/tv_open_view_age2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="打开viewPager2"
+        android:onClick="openViewPager2"/>
+
+    <TextView
+        android:id="@+id/tv_open_huawei_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="打开扫码1"
+        android:onClick="openHuaweiScan"/>
+
+    <TextView
+        android:id="@+id/tv_open_huawei_scan_custom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="打开viewPager2"
+        android:onClick="openHuaweiScanCustom"/>
+
+    <TextView
         android:id="@+id/tv_open_bubble"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

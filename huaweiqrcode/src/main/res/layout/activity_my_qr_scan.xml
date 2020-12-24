@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wuyson.huaweiqrcode.ui.MyQrScanActivity">
+
+    <FrameLayout
+        android:id="@+id/rim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@android:color/holo_blue_dark">
+
+            <ImageView
+                android:id="@+id/ivGoBack"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:onClick="@{(view)->model.onGoBack(view)}"
+                android:padding="6dp"
+                android:src="@drawable/icon_back_white" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="扫码"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/v_top_blank"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@id/rl_toolbar"
+            android:background="@color/white_f4" />
+
+        <LinearLayout
+            android:id="@+id/ll_scan"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_below="@id/v_top_blank"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white_f4" />
+
+            <View
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white_f4" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/ll_scan"
+            android:background="@color/white_f4">
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvScanHint"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_above="@+id/btnTools"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"
+            android:background="@color/bg_hint_black"
+            android:gravity="center"
+            android:paddingLeft="19dp"
+            android:paddingRight="19dp"
+            android:text="将二维码放入取景框中即可自动扫描"
+            android:textColor="@color/white"
+            android:textFontWeight="400"
+            android:textSize="14sp">
+
+        </TextView>
+
+        <LinearLayout
+            android:id="@+id/btnTools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="90dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="@{(view)->model.onSelectPhotoAlbum(view)}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="@mipmap/ic_launcher"
+                    android:padding="3dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textFontWeight="400"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/btn_flash"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/ivFlashlight"
+                        android:layout_width="27dp"
+                        android:layout_height="27dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:background="@mipmap/ic_launcher"
+                        android:padding="3dp" />
+
+                    <TextView
+                        android:id="@+id/tvFlashlight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="打开闪光灯"
+                        android:textColor="@color/white"
+                        android:textFontWeight="400"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>
