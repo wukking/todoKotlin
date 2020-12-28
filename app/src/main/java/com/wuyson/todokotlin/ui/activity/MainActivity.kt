@@ -31,19 +31,8 @@ class MainActivity : BaseActivity() {
         init()
     }
 
-    fun init() {
-//        ActivityCompat.requestPermissions(this, mPermission, CAMERA_REQ_CODE)
+    private fun init() {
 
-        alertDialog{
-            title = "标题啊"
-            message = "这是一个弹窗"
-            R.drawable.ic_launcher_background
-            setCancelable(false)
-            okButton { start<ViewPager2Activity>() }
-            cancelButton {  }
-        }.onShow {
-            toast("哈哈")
-        }.show()
     }
 
     override fun onRequestPermissionsResult(
@@ -61,7 +50,16 @@ class MainActivity : BaseActivity() {
     }
 
     fun openViewPager2(view: View) {
-        startActivity(Intent(this@MainActivity, ViewPager2Activity::class.java))
+        alertDialog{
+            title = "提示"
+            message = "确认打开ViewPager2实现的页面？"
+            R.mipmap.ic_launcher
+            setCancelable(false)
+            okButton { start<ViewPager2Activity>() }
+            cancelButton {  }
+        }.onShow {
+            toast("展示弹窗")
+        }.show()
     }
 
     fun openHuaweiScan(view: View) {

@@ -39,6 +39,5 @@ class ViewPager2Activity : AppCompatActivity() {
         override fun getItemCount(): Int = 100
 
         override fun createFragment(position: Int): Fragment = BlankFragment.newInstance("Tab${position}")
-
     }
 }

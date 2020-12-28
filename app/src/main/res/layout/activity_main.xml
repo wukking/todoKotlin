@@ -5,45 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".ui.activity.MainActivity">
 
-    <TextView
+    <Button
         android:id="@+id/tv_open_view_age2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="打开viewPager2"
-        android:onClick="openViewPager2"/>
+        android:onClick="openViewPager2"
+        android:text="打开viewPager2" />
 
-    <TextView
+    <Button
         android:id="@+id/tv_open_huawei_scan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="打开扫码1"
-        android:onClick="openHuaweiScan"/>
+        android:onClick="openHuaweiScan"
+        android:text="打开扫码1" />
 
-    <TextView
+    <Button
         android:id="@+id/tv_open_huawei_scan_custom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="打开viewPager2"
-        android:onClick="openHuaweiScanCustom"/>
+        android:onClick="openHuaweiScanCustom"
+        android:text="打开扫码2" />
 
-    <TextView
+    <Button
         android:id="@+id/tv_open_bubble"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="气泡"/>
+        android:text="气泡" />
 
-    <TextView
+    <Button
         android:id="@+id/tv_send_bubble"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="发送一条气泡通知"
-        android:padding="16dp"/>
-
-
+        android:text="发送一条气泡通知" />
 </LinearLayout>
