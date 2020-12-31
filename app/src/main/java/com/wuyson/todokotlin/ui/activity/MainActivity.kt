@@ -6,17 +6,33 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.service.controls.DeviceTypes
+import android.service.controls.templates.ControlTemplate
+import android.service.controls.templates.ToggleTemplate
+import android.telephony.TelephonyManager
 import android.view.View
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_STRONG
+import androidx.biometric.BiometricManager.Authenticators.DEVICE_CREDENTIAL
+import androidx.biometric.BiometricPrompt
 import com.huawei.hms.hmsscankit.ScanUtil
 import com.huawei.hms.ml.scan.HmsScan
 import com.wuyson.common.base.BaseActivity
 import com.wuyson.huaweiqrcode.ui.MyQrScanActivity
 import com.wuyson.huaweiqrcode.util.ScanUtils
 import com.wuyson.todokotlin.R
+import com.wuyson.todokotlin.component.MyControlService
 import splitties.activities.start
 import splitties.alertdialog.appcompat.*
 import splitties.toast.toast
+/**
+ *
+ * todo 设备控制
+ *
+ * @author: Wuyson
+ * @date: 2020/12/30
+ */
 
 class MainActivity : BaseActivity() {
     private lateinit var context: Context
@@ -32,7 +48,51 @@ class MainActivity : BaseActivity() {
     }
 
     private fun init() {
+//        var intent = Intent(this,MyControlService::class.java)
+//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+//            startForegroundService(intent)
+//        }
 
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
+            bionic()
+        }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.P)
+    private fun bionic(){
+        val mainExecutor = context.mainExecutor
+        val bionic:BiometricPrompt = BiometricPrompt(this,mainExecutor,object :BiometricPrompt.AuthenticationCallback(){
+            override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+                super.onAuthenticationError(errorCode, errString)
+                toast("验证错误")
+            }
+
+            override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+                super.onAuthenticationSucceeded(result)
+                toast("验证成功")
+            }
+
+            override fun onAuthenticationFailed() {
+                super.onAuthenticationFailed()
+                toast("验证失败")
+            }
+        })
+
+        val promptInfo = BiometricPrompt.PromptInfo.Builder()
+            .setTitle("Biometric login for my app")
+            .setSubtitle("Log in using your biometric credential")
+            .setAllowedAuthenticators(DEVICE_CREDENTIAL)
+             .setNegativeButtonText("Use account password")
+            .setConfirmationRequired(true)
+//        or DEVICE_CREDENTIAL
+            .setAllowedAuthenticators(BIOMETRIC_STRONG)
+            .build()
+
+        bionic.authenticate(promptInfo)
+    }
+
+    private fun is5G(){
+//        TelephonyManager
     }
 
     override fun onRequestPermissionsResult(
