@@ -2,7 +2,7 @@ package com.wuyson.common.base
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.wuyson.common.util.LogcatCompat
+import com.wuyson.common.compat.LogcatCompat
 
 /**
  * fragment基类

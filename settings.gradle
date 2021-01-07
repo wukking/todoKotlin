@@ -1,3 +1,4 @@
+include ':upush'
 include ':huaweiqrcode'
 include ':huawei'
 include ':common'

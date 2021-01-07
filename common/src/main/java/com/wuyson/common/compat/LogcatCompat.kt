@@ -1,4 +1,4 @@
-package com.wuyson.common.util
+package com.wuyson.common.compat
 
 import android.util.Log
 
