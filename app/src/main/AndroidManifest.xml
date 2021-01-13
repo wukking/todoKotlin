@@ -9,9 +9,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_app_fixed"
+        android:icon="@mipmap/ic_pft_custom"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_app_fixed_round"
+        android:roundIcon="@mipmap/ic_pft_custom_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TodoKotlin"
         android:name=".App"

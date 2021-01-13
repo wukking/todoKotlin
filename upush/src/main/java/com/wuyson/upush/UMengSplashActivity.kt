@@ -5,7 +5,6 @@ import com.umeng.message.inapp.UmengSplashMessageActivity
 
 
 class UMengSplashActivity : UmengSplashMessageActivity() {
-
     override fun onCustomPretreatment(): Boolean {
         val mInAppMessageManager = InAppMessageManager.getInstance(this)
         //设置应用内消息为Debug模式
