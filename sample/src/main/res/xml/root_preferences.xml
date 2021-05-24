@@ -1,0 +1,88 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/messages_header">
+
+        <!--isPreferenceVisible:可见性
+          useSimpleSummaryProvider: 摘要-->
+        <EditTextPreference
+            app:isPreferenceVisible="true"
+            app:key="signature"
+            app:title="@string/signature_title"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="reply"
+            app:entries="@array/reply_entries"
+            app:entryValues="@array/reply_values"
+            app:key="reply"
+            app:title="@string/reply_title"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="counting"
+            app:title="自定义SummaryProvider" />
+
+        <EditTextPreference
+            app:key="onlyNum"
+            app:title="只能输入数字"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/sync_header">
+
+        <SwitchPreferenceCompat
+            app:key="sync"
+            app:title="@string/sync_title" />
+
+        <SwitchPreferenceCompat
+            app:dependency="sync"
+            app:key="attachment"
+            app:summaryOff="@string/attachment_summary_off"
+            app:summaryOn="@string/attachment_summary_on"
+            app:title="@string/attachment_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="others">
+
+        <CheckBoxPreference
+            app:key="cb"
+            app:title="checkBox" />
+
+        <CheckBoxPreference
+            app:key="cb"
+            app:title="checkBox" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="help_category"
+        app:title="Help">
+
+        <Preference
+            app:key="intentActivity"
+            app:title="Intent新页面">
+<!--            val intent = Intent(context, ExampleActivity::class.java)
+                activityPreference.setIntent(intent)
+                -->
+            <intent
+                android:targetClass="com.wuyson.sample.ui.login.LoginActivity"
+                android:targetPackage="com.wuyson.sample" />
+            <extra
+                android:name="nickName"
+                android:value="Wuyson"/>
+        </Preference>
+
+        <Preference app:key="webPage"
+            app:title="隐私协议">
+
+            <intent android:action="android.intent.action.VIEW"
+                android:data="https://www.baidu.com/"/>
+        </Preference>
+
+        <Preference
+            app:fragment="com.wuyson.sample.ItemFragment"
+            app:key="feedback"
+            app:summary="Report technical issues or suggest new features"
+            app:title="Send feedback" />
+    </PreferenceCategory>
+</PreferenceScreen>

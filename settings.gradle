@@ -1,3 +1,4 @@
+include ':sample'
 include ':dokit'
 include ':upush'
 include ':huaweiqrcode'

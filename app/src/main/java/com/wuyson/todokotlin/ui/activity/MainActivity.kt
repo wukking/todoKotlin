@@ -20,6 +20,7 @@ import com.wuyson.common.base.BaseActivity
 import com.wuyson.huaweiqrcode.ui.MyQrScanActivity
 import com.wuyson.huaweiqrcode.util.ScanUtils
 import com.wuyson.todokotlin.R
+import com.wuyson.todokotlin.databinding.ActivityMainBinding
 import splitties.activities.start
 import splitties.alertdialog.appcompat.*
 import splitties.toast.toast
@@ -50,6 +51,8 @@ class MainActivity : BaseActivity() {
 
     override fun initActivity(savedInstanceState: Bundle?) {
         init()
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        binding.root
     }
 
     private fun init() {
