@@ -21,15 +21,15 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <activity android:name=".component.ComponentSetttingsActivity" />
-        <activity android:name=".ui.activity.AppBottomBarActivity" />
-        <activity android:name=".ui.activity.ViewBindingTestActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+        <activity android:name=".ui.activity.MainActivity">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN"/>-->
+<!--                <category android:name="android.intent.category.LAUNCHER"/>-->
+<!--            </intent-filter>-->
         </activity>
 
+        <activity android:name=".component.ComponentSetttingsActivity" />
+        <activity android:name=".ui.activity.AppBottomBarActivity" />
         <activity
             android:name=".ui.activity.BubbleActivity"
             android:allowEmbedded="true"
@@ -37,7 +37,8 @@
             android:label="气泡"
             android:resizeableActivity="true"
             tools:targetApi="n" />
-        <activity android:name=".ui.activity.MainActivity" />
+
+        <activity android:name=".ui.activity.ViewBindingTestActivity" />
         <activity android:name=".ui.activity.ViewPager2Activity" />
 
         <service

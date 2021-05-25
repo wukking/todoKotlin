@@ -12,6 +12,8 @@ import androidx.annotation.RequiresApi
 import androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_STRONG
 import androidx.biometric.BiometricManager.Authenticators.DEVICE_CREDENTIAL
 import androidx.biometric.BiometricPrompt
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.huawei.hms.hmsscankit.ScanUtil
 import com.huawei.hms.ml.scan.HmsScan
 import com.umeng.message.inapp.IUmengInAppMsgCloseCallback
@@ -21,10 +23,14 @@ import com.wuyson.huaweiqrcode.ui.MyQrScanActivity
 import com.wuyson.huaweiqrcode.util.ScanUtils
 import com.wuyson.todokotlin.R
 import com.wuyson.todokotlin.databinding.ActivityMainBinding
+import com.wuyson.todokotlin.ui.adapter.ItemDecoration
+import com.wuyson.todokotlin.ui.adapter.MainRecyclerAdapter
+import kotlinx.android.synthetic.main.activity_main.*
 import splitties.activities.start
 import splitties.alertdialog.appcompat.*
 import splitties.toast.toast
 import java.util.*
+import kotlin.collections.ArrayList
 
 /**
  *
@@ -38,6 +44,9 @@ class MainActivity : BaseActivity() {
     private val mPermission = arrayOf(Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE)
     private val CAMERA_REQ_CODE = 100
     private val REQUEST_CODE_SCAN_ONE = 101
+    private lateinit var binding:ActivityMainBinding
+
+    private var mDatas:ArrayList<String> = arrayListOf();
 
     override fun layoutResId(): Int = R.layout.activity_main
 
@@ -50,9 +59,25 @@ class MainActivity : BaseActivity() {
     }
 
     override fun initActivity(savedInstanceState: Bundle?) {
+        binding = ActivityMainBinding.inflate(layoutInflater)
         init()
-        val binding = ActivityMainBinding.inflate(layoutInflater)
-        binding.root
+        initRecyclerView()
+    }
+
+    private fun initRecyclerView(){
+        mDatas.add("Markdown")
+        mDatas.add("ViewPager2")
+        mDatas.add("打开扫码1")
+        mDatas.add("打开扫码2")
+        mDatas.add("气泡")
+        mDatas.add("发送一条气泡")
+        mDatas.add("发送一条延迟3S的Handler消息")
+
+        rv_content.apply {
+            layoutManager = StaggeredGridLayoutManager(3,RecyclerView.VERTICAL)
+            adapter = MainRecyclerAdapter(mDatas)
+            addItemDecoration(ItemDecoration(this@MainActivity))
+        }
     }
 
     private fun init() {
