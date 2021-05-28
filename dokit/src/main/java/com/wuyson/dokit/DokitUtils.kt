@@ -8,7 +8,7 @@ class DokitUtils {
 
     companion object{
 
-        fun init(application: Application,listKits: MutableList<AbstractKit>,pId:String){
+        fun init(application: Application, listKits: MutableList<AbstractKit>, pId:String){
             DoraemonKit.install(application,listKits,pId)
         }
     }

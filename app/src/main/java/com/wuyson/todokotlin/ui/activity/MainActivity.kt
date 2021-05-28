@@ -46,8 +46,6 @@ class MainActivity : BaseActivity() {
     private val REQUEST_CODE_SCAN_ONE = 101
     private lateinit var binding:ActivityMainBinding
 
-    private var mDatas:ArrayList<String> = arrayListOf();
-
     override fun layoutResId(): Int = R.layout.activity_main
 
     override fun onHandleMsg(msg: Message) {
@@ -61,23 +59,6 @@ class MainActivity : BaseActivity() {
     override fun initActivity(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
         init()
-        initRecyclerView()
-    }
-
-    private fun initRecyclerView(){
-        mDatas.add("Markdown")
-        mDatas.add("ViewPager2")
-        mDatas.add("打开扫码1")
-        mDatas.add("打开扫码2")
-        mDatas.add("气泡")
-        mDatas.add("发送一条气泡")
-        mDatas.add("发送一条延迟3S的Handler消息")
-
-        rv_content.apply {
-            layoutManager = StaggeredGridLayoutManager(3,RecyclerView.VERTICAL)
-            adapter = MainRecyclerAdapter(mDatas)
-            addItemDecoration(ItemDecoration(this@MainActivity))
-        }
     }
 
     private fun init() {

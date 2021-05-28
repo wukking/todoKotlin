@@ -17,7 +17,7 @@ android {
         consumerProguardFiles "consumer-rules.pro"
 
         buildFeatures{
-            dataBinding = true
+            dataBinding true
         }
     }
 
@@ -48,4 +48,10 @@ dependencies {
 
     api("com.louiscad.splitties:splitties-fun-pack-android-base:3.0.0-beta01")
     api("com.louiscad.splitties:splitties-fun-pack-android-appcompat:3.0.0-beta01")
+
+    def nav_version = "2.3.5"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    // Feature module Support
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
 }

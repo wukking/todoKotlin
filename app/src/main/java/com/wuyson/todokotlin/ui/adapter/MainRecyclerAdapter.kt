@@ -5,8 +5,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.wuyson.todokotlin.databinding.ItemMainListBinding
+import com.wuyson.todokotlin.entity.local.PageEntity
 
-class MainRecyclerAdapter(private val datas: List<String>) :
+class MainRecyclerAdapter(private val datas: List<PageEntity>) :
     RecyclerView.Adapter<MainHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainHolder {
@@ -28,7 +29,7 @@ class MainRecyclerAdapter(private val datas: List<String>) :
 
 class MainHolder(private val itemBinding: ItemMainListBinding) :
     RecyclerView.ViewHolder(itemBinding.root) {
-    fun bind(data: String) {
-        itemBinding.tvTitle.text = data
+    fun bind(data: PageEntity) {
+        itemBinding.tvTitle.text = data.title
     }
 }

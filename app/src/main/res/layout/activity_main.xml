@@ -8,12 +8,12 @@
     android:padding="16dp"
     tools:context=".ui.activity.MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
-        app:spanCount="3" />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph"/>
 
     <Button
         android:id="@+id/tv_open_view_age2"
