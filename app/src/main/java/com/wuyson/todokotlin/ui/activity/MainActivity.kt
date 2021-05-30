@@ -12,6 +12,10 @@ import androidx.annotation.RequiresApi
 import androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_STRONG
 import androidx.biometric.BiometricManager.Authenticators.DEVICE_CREDENTIAL
 import androidx.biometric.BiometricPrompt
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.huawei.hms.hmsscankit.ScanUtil
@@ -58,6 +62,10 @@ class MainActivity : BaseActivity() {
 
     override fun initActivity(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
+
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
         init()
     }
 
@@ -70,11 +78,11 @@ class MainActivity : BaseActivity() {
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
 //            bionic()
 //        }
-        InAppMessageManager.getInstance(this).showCardMessage(this,"main",object :IUmengInAppMsgCloseCallback{
+/*        InAppMessageManager.getInstance(this).showCardMessage(this,"main",object :IUmengInAppMsgCloseCallback{
             override fun onClose() {
                 toast("关闭插屏消息")
             }
-        })
+        })*/
     }
 
     private fun is5G() {

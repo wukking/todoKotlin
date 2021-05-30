@@ -19,11 +19,11 @@
         <activity android:name=".UMengSplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme_Umeng_Push_Splash">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <!-- 以下为基本配置信息，需要自行添加至您的AndroidManifest文件中 start -->
         <service

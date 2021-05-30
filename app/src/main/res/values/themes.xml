@@ -13,4 +13,8 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.TodoKotlin.Splash" parent="Theme.TodoKotlin">
+        <item name="android:windowSplashscreenContent" tools:targetApi="o">@drawable/img_my_girl</item>
+    </style>
 </resources>
