@@ -1,8 +1,11 @@
 package com.wuyson.todokotlin.ui.activity
 
 import android.os.Bundle
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.wuyson.common.base.BaseActivity
+import com.wuyson.common.base.BaseCompatActivity
 import com.wuyson.todokotlin.R
 import com.wuyson.todokotlin.databinding.ActivityMainBinding
 
@@ -14,17 +17,20 @@ import com.wuyson.todokotlin.databinding.ActivityMainBinding
  * @date: 2020/12/30
  */
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseCompatActivity() {
     private lateinit var binding:ActivityMainBinding
 
-    override fun layoutResId(): Int = R.layout.activity_main
+    override fun setRootView() {
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+    }
 
     override fun initActivity(savedInstanceState: Bundle?) {
-        binding = ActivityMainBinding.inflate(layoutInflater)
-
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
+//        val navController = findNavController(R.id.nav_host_fragment)
+        binding.bnvTab.setupWithNavController(navController)
         init()
     }
 

@@ -9,3 +9,4 @@ include ':app'
 rootProject.name = "TodoKotlin"
 include ':aidlsample'
 include ':aidlLib'
+include ':mvvm'

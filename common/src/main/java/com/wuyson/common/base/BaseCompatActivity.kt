@@ -8,11 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 
 /**
  * Activity基类
- * ======== ViewBinding 就不要使用了 ==========
  * @author Wuyson
  * @date 2020/12/15
  */
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseCompatActivity : AppCompatActivity() {
     protected lateinit var mHandler: BaseHandler
     protected lateinit var mContext: Context
 
@@ -20,7 +19,7 @@ abstract class BaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mContext = this
         doBeforeSetView()
-        setContentView(layoutResId())
+        setRootView()
         doAfterSetContentView()
 
         initActivity(savedInstanceState)
@@ -29,6 +28,11 @@ abstract class BaseActivity : AppCompatActivity() {
     open fun doBeforeSetView() {
         setStatusBar()
     }
+
+    /**
+     * 使用ViewBinding
+     */
+    abstract fun setRootView()
 
     /**
      * 设置状态栏
@@ -47,9 +51,6 @@ abstract class BaseActivity : AppCompatActivity() {
             }
         }
     }
-
-    @LayoutRes
-    abstract fun layoutResId(): Int
 
     abstract fun initActivity(savedInstanceState: Bundle?)
 
