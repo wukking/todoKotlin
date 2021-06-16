@@ -5,55 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
     tools:context=".ui.activity.MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="match_parent"
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph"/>
-
-    <Button
-        android:id="@+id/tv_open_view_age2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="openViewPager2"
-        android:text="打开viewPager2" />
-
-    <Button
-        android:id="@+id/tv_open_huawei_scan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="openHuaweiScan"
-        android:text="打开扫码1" />
-
-    <Button
-        android:id="@+id/tv_open_huawei_scan_custom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="openHuaweiScanCustom"
-        android:text="打开扫码2" />
-
-    <Button
-        android:id="@+id/tv_open_bubble"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="气泡" />
-
-    <Button
-        android:id="@+id/tv_send_bubble"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="发送一条气泡通知" />
-
-
-    <Button
-        android:id="@+id/tv_handle_msg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="send5SecondDelayMsg"
-        android:text="发送一条3秒延迟的handler消息" />
 </LinearLayout>

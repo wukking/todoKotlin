@@ -1,4 +1,4 @@
-package com.wuyson.common.binding
+package com.wuyson.common.binding_test
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
